@@ -13,7 +13,7 @@ import Dashboard from "./pages/Dashboard";
 function Router() {
   return (
     <Switch>
-      <Route path={"/{"} component={Home} />
+      <Route path={"/"} component={Home} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/module/:moduleId"} component={Module} />
       <Route path={"/404"} component={NotFound} />
