@@ -1,0 +1,37 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663586458381/9oajw7aPAKVzf7goBEupuM",
+    "access_key_id": "ASIAZV3A2ECZMSIZTX2J",
+    "secret_access_key": "0tsShctU/RmG7+x0RAR/bvTcJPd0JBKn/Y1Rkmfv",
+    "session_token": "IQoJb3JpZ2luX2VjEAcaCXVzLWVhc3QtMSJHMEUCICcnszxV5Pl7n+HfgOYFo7Dk6T3H/VXI5xg4/aIfzxPyAiEAo3GPJiEY9nCHtexr7rR2BvgjTRF8ZEPuAbXV0rco6GIq/wMI0P//////////ARAEGgw2NjUzODYwOTg4NjYiDLIdL6mthpIgWd5T/SrTAxXkn89t4HD/Ve2jQlTXFqjd4D+1p+ZSshZiItgivRWzsXlIWRpW5ujVyQrD2CWpG9AH0L1y0CtjfEPW7XgN9q8ljGyKqtLfIbHRfS4bCJ8eHvBsjzE8X75miAGp5sPaAjWD+SLrCaxGBg/U1v0NjvY5SKVccSjkS74udnuy3/zCXyY5EvRypyyiccgarUCDyZ8f82oxpoHL1eFrLpYILa9adcxBLuSZtWdiwSUDD4lI0UQx1bPhoRJ4syMXphvikvDfyl1nfE/g22ABxEjvQfhPJfwVlGr6mfHBVVc/Eaq4/eBpQRxoLZjDnuXvhhPhuqC8TSj5rXnkUFCxH0nHfhP1J1NQq2gmpZo5EcObG8VRAc/999pCTcmnZ+U6XKfc9dDWaJ6AHIGWIsJfJyb6YLs+qNYk+Lq6v2Q95re9imQoRQXhPkAK2b9UEau8Bg9j1NYLZ2t7HcfebxuZaUO2knQwxqw5gc8kEEiwNNKHT1gXV50Ca7ILf0gwwBQjsK7PfnhGWrocFy8FDTI78mMmWZLlFdTNi2L1LsMRs8qf0U5nvapT9Ogs9erBgm7L4lUzo/SRNQVP9hqRly7+qX+SthYi4FNvYskKKXofrJf0xcQGt5A+MKSPsNAGOp0BRwlb5bsj2CnizCp9bsByvJl/9cEQx3pJXox3aPVcCiVauwOkz09zeXajjQE6kBFYqXRJ9jxogwi38wZeZH8kGAElBu8RXBtk1wIWdAHGwwEnzDMVhWuXZaqR/ns/J5OC1lh6grtGPh3APCOZYxUkZQDPFs994dg3hpi6DGUShFKWHSWHS3BKKLnd+y1o/AZL9V4jEiDZoqZV/B6dmA==",
+    "expiration": "2026-05-19T18:48:04.000Z"
+  },
+  "name": "ethical_hacking_course_web",
+  "path": "/home/ubuntu/ethical_hacking_course_web",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "FDiCLm9h6MjpLMmwUpxV7d",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "XBD7gdFKxutg7RKTVypzTP",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "One God One Love",
+    "OWNER_OPEN_ID": "ZFokoNJcXGKwzsFBJYFeAh",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "a301bdb1-d7a5-4ed3-a6b7-8da8f950c0bc",
+    "VITE_APP_ID": "9oajw7aPAKVzf7goBEupuM",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663586458381/ZseBkcFerreaxdti.png",
+    "VITE_APP_TITLE": "Ethical Hacking Course - From Zero to Hero",
+    "VITE_FRONTEND_FORGE_API_KEY": "do7Cvu74dvyG4k87eP5qXS",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}

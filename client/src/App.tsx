@@ -4,14 +4,17 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { ProgressProvider } from "./contexts/ProgressContext";
 import Home from "./pages/Home";
 import Module from "./pages/Module";
+import Dashboard from "./pages/Dashboard";
 
 
 function Router() {
   return (
     <Switch>
       <Route path={"/{"} component={Home} />
+      <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/module/:moduleId"} component={Module} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
@@ -32,10 +35,12 @@ function App() {
         defaultTheme="dark"
         // switchable
       >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+        <ProgressProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </ProgressProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );

@@ -2,27 +2,35 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { courseData } from '@/lib/courseData';
-import { ChevronRight, BookOpen, Target, Shield } from 'lucide-react';
+import { ChevronRight, BookOpen, Target, Shield, Moon, Sun } from 'lucide-react';
 import { useLocation } from 'wouter';
+import { SearchBar } from '@/components/SearchBar';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export default function Home() {
   const [, setLocation] = useLocation();
   const [selectedModule, setSelectedModule] = useState<string | null>(null);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation Bar */}
       <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex items-center justify-between py-4">
+        <div className="container flex items-center justify-between py-4 gap-4">
           <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-primary">
-              &gt;_ ETHIC
-            </div>
+            <div className="text-2xl font-bold text-primary">&gt;_ ETHIC</div>
             <div className="text-2xl font-bold text-accent">HACK</div>
           </div>
-          <div className="hidden md:flex items-center gap-6">
-            <button className="text-sm hover:text-primary transition-colors">Modules</button>
-            <button className="text-sm hover:text-primary transition-colors">About</button>
+          <div className="flex-1 max-w-md hidden md:block">
+            <SearchBar />
+          </div>
+          <div className="flex items-center gap-2">
+            <Button size="sm" variant="ghost" onClick={() => setLocation('/dashboard')} className="gap-2">
+              📊 Dashboard
+            </Button>
+            <Button size="sm" variant="ghost" onClick={toggleTheme} className="gap-2">
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </Button>
             <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
               Start Learning
             </Button>

@@ -1,20 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { courseData } from '@/lib/courseData';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
 import { Streamdown } from 'streamdown';
 import { ProseContent } from '@/components/ProseContent';
+import { useProgressContext } from '@/contexts/ProgressContext';
+import { getQuizForLesson, Quiz } from '@/lib/quizzes';
+import { QuizComponent } from '@/components/QuizComponent';
+import { CommentsSection } from '@/components/CommentsSection';
+import { ResourcesDownload } from '@/components/ResourcesDownload';
 
 export default function Module() {
   const { moduleId } = useParams();
   const [, setLocation] = useLocation();
   const [selectedLessonId, setSelectedLessonId] = useState<string | null>(null);
+  const [showQuiz, setShowQuiz] = useState(false);
+  const { markLessonComplete, isLessonComplete } = useProgressContext();
+  const [quiz, setQuiz] = useState<Quiz | null>(null);
 
   const module = courseData.find(m => m.id === moduleId);
   const selectedLesson = module?.lessons.find(l => l.id === selectedLessonId) || module?.lessons[0];
   const lessonIndex = module?.lessons.findIndex(l => l.id === selectedLesson?.id) ?? 0;
+  const isCompleted = selectedLesson ? isLessonComplete(selectedLesson.id) : false;
+
+  useEffect(() => {
+    if (selectedLesson) {
+      const lessonQuiz = getQuizForLesson(selectedLesson.id);
+      setQuiz(lessonQuiz || null);
+      setShowQuiz(false);
+    }
+  }, [selectedLesson]);
 
   if (!module) {
     return (
@@ -127,6 +144,52 @@ export default function Module() {
                     <Streamdown>{selectedLesson.content}</Streamdown>
                   </ProseContent>
                 </Card>
+
+                {/* Mark Complete Button */}
+                <div className="flex gap-4 pt-8">
+                  <Button
+                    onClick={() => {
+                      markLessonComplete(selectedLesson.id);
+                      if (nextLesson) {
+                        setSelectedLessonId(nextLesson.id);
+                      }
+                    }}
+                    className={`flex-1 gap-2 ${isCompleted ? 'bg-green-600 hover:bg-green-700' : 'bg-primary hover:bg-primary/90'} text-primary-foreground`}
+                  >
+                    <CheckCircle className="w-4 h-4" />
+                    {isCompleted ? 'Completed' : 'Mark as Complete'}
+                  </Button>
+                </div>
+
+                {/* Quiz Section */}
+                {quiz && (
+                  <div className="space-y-4 border-t border-border pt-8">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-bold">Knowledge Check</h3>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => setShowQuiz(!showQuiz)}
+                      >
+                        {showQuiz ? 'Hide' : 'Show'} Quiz
+                      </Button>
+                    </div>
+                    {showQuiz && (
+                      <QuizComponent
+                        quiz={quiz}
+                        onComplete={(score, total) => {
+                          console.log(`Quiz completed: ${score}/${total}`);
+                        }}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {/* Resources */}
+                <ResourcesDownload lessonId={selectedLesson.id} moduleId={module.id} />
+
+                {/* Comments Section */}
+                <CommentsSection lessonId={selectedLesson.id} />
 
                 {/* Navigation Buttons */}
                 <div className="flex gap-4 pt-8 border-t border-border">
