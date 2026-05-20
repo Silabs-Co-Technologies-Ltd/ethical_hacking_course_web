@@ -64,6 +64,14 @@ export function Certificate({
         <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-primary/30" />
 
         <div className="relative z-10 space-y-6">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <img src="/manus-storage/silabslogo_09e95224.jpg" alt="Silabs & Co Technologies Ltd" className="h-12 w-12 rounded-full" />
+            <div className="text-center">
+              <p className="text-sm font-bold text-primary">Silabs & Co Technologies Ltd</p>
+              <p className="text-xs text-muted-foreground">Cybersecurity Education</p>
+            </div>
+          </div>
+
           <div className="text-5xl font-bold text-primary">🎓</div>
 
           <h1 className="text-4xl font-bold text-primary">Certificate of Completion</h1>

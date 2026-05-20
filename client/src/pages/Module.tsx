@@ -60,6 +60,10 @@ export default function Module() {
             <ChevronLeft className="w-4 h-4" /> Back
           </Button>
           <div className="text-center">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <img src="/manus-storage/silabslogo_09e95224.jpg" alt="Silabs & Co Technologies Ltd" className="h-6 w-6 rounded-full" />
+              <span className="text-xs text-primary font-bold">Silabs & Co</span>
+            </div>
             <div className="text-sm text-muted-foreground">Module {courseData.indexOf(module) + 1}</div>
             <div className="font-bold">{module.title}</div>
           </div>

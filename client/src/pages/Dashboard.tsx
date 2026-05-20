@@ -43,7 +43,10 @@ export default function Dashboard() {
             >
               <ChevronLeft className="w-4 h-4" /> Back
             </Button>
-            <h1 className="text-xl font-bold">Certificate of Completion</h1>
+            <div className="flex items-center gap-2">
+              <img src="/manus-storage/silabslogo_09e95224.jpg" alt="Silabs & Co Technologies Ltd" className="h-6 w-6 rounded-full" />
+              <h1 className="text-xl font-bold">Certificate of Completion</h1>
+            </div>
             <div className="w-16" />
           </div>
         </nav>
@@ -72,9 +75,12 @@ export default function Dashboard() {
           >
             <ChevronLeft className="w-4 h-4" /> Back
           </Button>
-          <h1 className="text-xl font-bold flex items-center gap-2">
-            <BarChart3 className="w-5 h-5 text-primary" /> Your Dashboard
-          </h1>
+          <div className="flex items-center gap-2">
+            <img src="/manus-storage/silabslogo_09e95224.jpg" alt="Silabs & Co Technologies Ltd" className="h-6 w-6 rounded-full" />
+            <h1 className="text-xl font-bold flex items-center gap-2">
+              <BarChart3 className="w-5 h-5 text-primary" /> Your Dashboard
+            </h1>
+          </div>
           <div className="w-16" />
         </div>
       </nav>

@@ -17,9 +17,12 @@ export default function Home() {
       {/* Navigation Bar */}
       <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex items-center justify-between py-4 gap-4">
-          <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-primary">&gt;_ ETHIC</div>
-            <div className="text-2xl font-bold text-accent">HACK</div>
+          <div className="flex items-center gap-3">
+            <img src="/manus-storage/silabslogo_09e95224.jpg" alt="Silabs & Co Technologies Ltd" className="h-10 w-10 rounded-full" />
+            <div className="flex items-center gap-2">
+              <div className="text-2xl font-bold text-primary">&gt;_ ETHIC</div>
+              <div className="text-2xl font-bold text-accent">HACK</div>
+            </div>
           </div>
           <div className="flex-1 max-w-md hidden md:block">
             <SearchBar />
@@ -256,7 +259,15 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-border">
         <div className="container py-12">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-5 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/manus-storage/silabslogo_09e95224.jpg" alt="Silabs & Co Technologies Ltd" className="h-8 w-8 rounded-full" />
+                <h4 className="font-bold text-primary">Silabs & Co</h4>
+              </div>
+              <p className="text-xs text-muted-foreground mb-4">Leading provider of cybersecurity education and ethical hacking training.</p>
+              <p className="text-xs text-muted-foreground">Silabs & Co Technologies Ltd</p>
+            </div>
             <div>
               <h4 className="font-bold mb-4">Course</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
@@ -292,7 +303,7 @@ export default function Home() {
           </div>
           
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2026 Ethical Hacking Course. Built with security in mind. Always hack responsibly.</p>
+            <p>© 2026 Ethical Hacking Course by Silabs & Co Technologies Ltd. Built with security in mind. Always hack responsibly.</p>
           </div>
         </div>
       </footer>
