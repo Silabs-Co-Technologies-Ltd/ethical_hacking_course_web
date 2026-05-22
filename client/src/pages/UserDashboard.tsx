@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { trpc } from "@/lib/trpc";
 import { Award, BookOpen, TrendingUp, LogOut } from "lucide-react";
+import { CertificateCard } from "@/components/CertificateCard";
 
 export default function UserDashboard() {
   const { user, logout } = useAuth();
@@ -101,7 +102,7 @@ export default function UserDashboard() {
 
         {/* Completed Courses & Certificates */}
         <div className="mb-8">
-          <h3 className="text-xl font-bold mb-4">Completed Courses ({completedCourses.length})</h3>
+          <h3 className="text-xl font-bold mb-4">Completed Courses & Certificates ({completedCourses.length})</h3>
           {completedCourses.length === 0 ? (
             <Card className="p-8 text-center text-muted-foreground">
               <p>Complete your first course to earn a certificate!</p>
@@ -109,18 +110,11 @@ export default function UserDashboard() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {completedCourses.map((enrollment) => (
-                <Card key={enrollment.id} className="p-4 border-green-500/30">
-                  <div className="flex items-start justify-between mb-2">
-                    <h4 className="font-bold">{enrollment.course?.title}</h4>
-                    <Award className="w-5 h-5 text-yellow-400" />
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Completed on {enrollment.completedAt ? new Date(enrollment.completedAt).toLocaleDateString() : "N/A"}
-                  </p>
-                  <Button size="sm" className="w-full bg-green-600 hover:bg-green-700">
-                    Download Certificate
-                  </Button>
-                </Card>
+                <CertificateCard
+                  key={enrollment.id}
+                  enrollment={enrollment}
+                  course={enrollment.course}
+                />
               ))}
             </div>
           )}

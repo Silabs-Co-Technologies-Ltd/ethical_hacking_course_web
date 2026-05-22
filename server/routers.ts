@@ -20,6 +20,13 @@ import {
   getUserLeaderboardPosition,
   updateLeaderboardPoints,
 } from "./db";
+import {
+  createCertificate,
+  getCertificateByNumber,
+  getUserCertificates,
+  getCertificateForCourse,
+} from "./db-certificates";
+import { generateCertificateWithReportlab } from "./certificates";
 
 export const appRouter = router({
   system: systemRouter,
@@ -202,6 +209,81 @@ export const appRouter = router({
     myPosition: protectedProcedure.query(async ({ ctx }) => {
       return getUserLeaderboardPosition(ctx.user.id);
     }),
+  }),
+
+  // ============================================================================
+  // CERTIFICATES
+  // ============================================================================
+  certificates: router({
+    // Generate certificate for completed course
+    generate: protectedProcedure
+      .input(
+        z.object({
+          enrollmentId: z.number(),
+          courseId: z.number(),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        try {
+          // Verify enrollment belongs to user
+          const enrollment = await getUserEnrollmentForCourse(ctx.user.id, input.courseId);
+          if (!enrollment || enrollment.id !== input.enrollmentId) {
+            throw new Error("Unauthorized");
+          }
+
+          // Check if course is completed
+          if (!enrollment.isCompleted) {
+            throw new Error("Course not completed");
+          }
+
+          // Check if certificate already exists
+          const existing = await getCertificateForCourse(ctx.user.id, input.courseId);
+          if (existing) {
+            return existing;
+          }
+
+          // Get course details
+          const course = await getCourseById(input.courseId);
+          if (!course) {
+            throw new Error("Course not found");
+          }
+
+          // Generate certificate
+          const certData = await generateCertificateWithReportlab({
+            learnerName: ctx.user.name || "Learner",
+            courseTitle: course.title,
+            courseCategory: course.category,
+            completionDate: enrollment.completedAt || new Date(),
+            certificateNumber: "",
+          });
+
+          // Save certificate to database
+          const certificate = await createCertificate(
+            ctx.user.id,
+            input.courseId,
+            certData.certificateNumber,
+            certData.url,
+            enrollment.completedAt || new Date()
+          );
+
+          return certificate;
+        } catch (error) {
+          console.error("Certificate generation error:", error);
+          throw error;
+        }
+      }),
+
+    // Get user's certificates
+    myCertificates: protectedProcedure.query(async ({ ctx }) => {
+      return getUserCertificates(ctx.user.id);
+    }),
+
+    // Get certificate details
+    detail: publicProcedure
+      .input(z.object({ certificateNumber: z.string() }))
+      .query(async ({ input }) => {
+        return getCertificateByNumber(input.certificateNumber);
+      }),
   }),
 });
 
