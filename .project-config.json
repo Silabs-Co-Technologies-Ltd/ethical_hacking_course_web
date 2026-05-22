@@ -1,17 +1,24 @@
 {
   "build_command": "pnpm run build",
-  "capabilities": [],
+  "capabilities": [
+    "db",
+    "server",
+    "user"
+  ],
   "dev_command": "pnpm run dev",
-  "env_vars": {},
+  "env_vars": {
+    "DATABASE_URL": "mysql://2UkLGhJJC2t1ts3.root:6N591LsBvH9oMwdEa8uS@gateway06.us-east-1.prod.aws.tidbcloud.com:4000/9oajw7aPAKVzf7goBEupuM?ssl={\"rejectUnauthorized\":true}",
+    "DRIZZLE_DATABASE_URL": "mysql://2UkLGhJJC2t1ts3.root:6N591LsBvH9oMwdEa8uS@gateway06.us-east-1.prod.aws.tidbcloud.com:4000/9oajw7aPAKVzf7goBEupuM?ssl={\"rejectUnauthorized\":true}"
+  },
   "experiments": [
     "no_db_push"
   ],
   "git_remote": {
     "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663586458381/9oajw7aPAKVzf7goBEupuM",
-    "access_key_id": "ASIAZV3A2ECZMSIZTX2J",
-    "secret_access_key": "0tsShctU/RmG7+x0RAR/bvTcJPd0JBKn/Y1Rkmfv",
-    "session_token": "IQoJb3JpZ2luX2VjEAcaCXVzLWVhc3QtMSJHMEUCICcnszxV5Pl7n+HfgOYFo7Dk6T3H/VXI5xg4/aIfzxPyAiEAo3GPJiEY9nCHtexr7rR2BvgjTRF8ZEPuAbXV0rco6GIq/wMI0P//////////ARAEGgw2NjUzODYwOTg4NjYiDLIdL6mthpIgWd5T/SrTAxXkn89t4HD/Ve2jQlTXFqjd4D+1p+ZSshZiItgivRWzsXlIWRpW5ujVyQrD2CWpG9AH0L1y0CtjfEPW7XgN9q8ljGyKqtLfIbHRfS4bCJ8eHvBsjzE8X75miAGp5sPaAjWD+SLrCaxGBg/U1v0NjvY5SKVccSjkS74udnuy3/zCXyY5EvRypyyiccgarUCDyZ8f82oxpoHL1eFrLpYILa9adcxBLuSZtWdiwSUDD4lI0UQx1bPhoRJ4syMXphvikvDfyl1nfE/g22ABxEjvQfhPJfwVlGr6mfHBVVc/Eaq4/eBpQRxoLZjDnuXvhhPhuqC8TSj5rXnkUFCxH0nHfhP1J1NQq2gmpZo5EcObG8VRAc/999pCTcmnZ+U6XKfc9dDWaJ6AHIGWIsJfJyb6YLs+qNYk+Lq6v2Q95re9imQoRQXhPkAK2b9UEau8Bg9j1NYLZ2t7HcfebxuZaUO2knQwxqw5gc8kEEiwNNKHT1gXV50Ca7ILf0gwwBQjsK7PfnhGWrocFy8FDTI78mMmWZLlFdTNi2L1LsMRs8qf0U5nvapT9Ogs9erBgm7L4lUzo/SRNQVP9hqRly7+qX+SthYi4FNvYskKKXofrJf0xcQGt5A+MKSPsNAGOp0BRwlb5bsj2CnizCp9bsByvJl/9cEQx3pJXox3aPVcCiVauwOkz09zeXajjQE6kBFYqXRJ9jxogwi38wZeZH8kGAElBu8RXBtk1wIWdAHGwwEnzDMVhWuXZaqR/ns/J5OC1lh6grtGPh3APCOZYxUkZQDPFs994dg3hpi6DGUShFKWHSWHS3BKKLnd+y1o/AZL9V4jEiDZoqZV/B6dmA==",
-    "expiration": "2026-05-19T18:48:04.000Z"
+    "access_key_id": "ASIAZV3A2ECZGD2IEPFG",
+    "secret_access_key": "5YJpNQEIsjXh+V8+AMHLG2nDYI1B/CJbOlrO9J6T",
+    "session_token": "IQoJb3JpZ2luX2VjEDoaCXVzLWVhc3QtMSJGMEQCIFcUP6o0i8jk4zaC8bBxdKvNDX7ItgyaSO2PZLTyhFFhAiBxxTcrR9qO/r9umKdLtX6WPPuJGmqekZKy3OxOENNlSCr2AwgDEAQaDDY2NTM4NjA5ODg2NiIMlaCaKcPfQlmKva3wKtMDlp8ha8xv1NnxHmCUM0i14qRueeJJW2r+fZkBlwnYFHbNCmwonKge7bi/dNN9pqBulTWcHWRW++UYQDEME99w7h1dYD94znbU2D0MyAV8xtQwFMOM9x+48+ls+4rjqbUHmOT+U15vLq82UKpEvzEV/fvlehwHXjvDpOGWRwROsxsW0ndELoTUvqkpazTQB04557j7Dkn5URClcr5Irpmzfva4JcaUKxce++QeIB7W0KIBHnWYRmy8yMgXacuq3IBdx3iSZC8ozR8Jikwrc1mDqjokeDJEZRN1RT/rw5im6+z+k+k0Kzpy5Dx+POKMlJSiiTWxZBJBPI17Jl1HWcwRhaT52VtV1ccaHlzqwyXXLYD2Iu0u0x/EkHSa9UCY4beYXYEoSKhqkqwlHEQY0+S8ajBEBt+oRN8ngh1l+++pvkWILPCDxl3BnTQGb/wqIlzU3C7JspLMWMEmuSTeR5aVZqB8fPU2mSebCV6HDFj5qF3AFaBn+yyUVLYdAjO8e/3VN1m9iVNgVd5hA6ZfCNNB4apI2WuYumnRj7HMQZx/FJBrSKMYhf4QRRJ1SidzOXB/g9rC5gSkh5pi1+nhEWOcnFnEMgYCOYvdDhLT3wTut4/AxGMwlK670AY6ngESuCvuhZjZ5eyYoRjlUjqysGvm8ZhjUM36qjhEPNlnIyL/lOYbq5nNHyiRUZV/VqLBC2GMoDEAbEQGLW0H+QBex0x/VFNW17dROoVEK5lBwSgT1wDHKQhSgVh2YbmEPyzXPFHUsg3iBMrACr8YvOmTXHfSZkllvareez00cBSxWc455sZJne+Vbf0N/tCM42MAeBsaf+MRWZIKHjcIRw==",
+    "expiration": "2026-05-21T21:57:40.000Z"
   },
   "name": "ethical_hacking_course_web",
   "path": "/home/ubuntu/ethical_hacking_course_web",
