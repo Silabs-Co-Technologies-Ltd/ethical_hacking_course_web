@@ -18,12 +18,15 @@ export async function handleOAuthCallback(req: Request, res: Response) {
   }
 
   try {
-    // Decode state to get redirect URI
+    // Decode state to get redirect URI and return path
     let redirectUri = "/academy";
+    let returnPath = "/academy";
     try {
       const stateData = JSON.parse(Buffer.from(state as string, "base64").toString());
-      redirectUri = stateData.returnPath || "/academy";
+      redirectUri = stateData.redirectUri || redirectUri;
+      returnPath = stateData.returnPath || "/academy";
     } catch (e) {
+      console.error("Failed to parse state:", e);
       // Fallback to default redirect
     }
 
@@ -54,7 +57,7 @@ export async function handleOAuthCallback(req: Request, res: Response) {
     res.cookie(COOKIE_NAME, token, cookieOptions);
 
     // Redirect to the app
-    return res.redirect(redirectUri);
+    return res.redirect(returnPath);
   } catch (error) {
     console.error("OAuth callback error:", error);
     return res.status(500).json({ error: "OAuth callback failed" });
