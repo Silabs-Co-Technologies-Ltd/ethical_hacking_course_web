@@ -8,6 +8,7 @@ import Landing from "./pages/Landing";
 import Academy from "./pages/Academy";
 import UserDashboard from "./pages/UserDashboard";
 import Leaderboard from "./pages/Leaderboard";
+import Profile from "./pages/Profile";
 
 function Router() {
   return (
@@ -15,6 +16,7 @@ function Router() {
       <Route path={"/"} component={Landing} />
       <Route path={"/academy"} component={Academy} />
       <Route path={"/dashboard"} component={UserDashboard} />
+      <Route path={"/profile"} component={Profile} />
       <Route path={"/leaderboard"} component={Leaderboard} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
