@@ -15,10 +15,11 @@
   ],
   "git_remote": {
     "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663586458381/9oajw7aPAKVzf7goBEupuM",
-    "access_key_id": "ASIAZV3A2ECZGD2IEPFG",
-    "secret_access_key": "5YJpNQEIsjXh+V8+AMHLG2nDYI1B/CJbOlrO9J6T",
-    "session_token": "IQoJb3JpZ2luX2VjEDoaCXVzLWVhc3QtMSJGMEQCIFcUP6o0i8jk4zaC8bBxdKvNDX7ItgyaSO2PZLTyhFFhAiBxxTcrR9qO/r9umKdLtX6WPPuJGmqekZKy3OxOENNlSCr2AwgDEAQaDDY2NTM4NjA5ODg2NiIMlaCaKcPfQlmKva3wKtMDlp8ha8xv1NnxHmCUM0i14qRueeJJW2r+fZkBlwnYFHbNCmwonKge7bi/dNN9pqBulTWcHWRW++UYQDEME99w7h1dYD94znbU2D0MyAV8xtQwFMOM9x+48+ls+4rjqbUHmOT+U15vLq82UKpEvzEV/fvlehwHXjvDpOGWRwROsxsW0ndELoTUvqkpazTQB04557j7Dkn5URClcr5Irpmzfva4JcaUKxce++QeIB7W0KIBHnWYRmy8yMgXacuq3IBdx3iSZC8ozR8Jikwrc1mDqjokeDJEZRN1RT/rw5im6+z+k+k0Kzpy5Dx+POKMlJSiiTWxZBJBPI17Jl1HWcwRhaT52VtV1ccaHlzqwyXXLYD2Iu0u0x/EkHSa9UCY4beYXYEoSKhqkqwlHEQY0+S8ajBEBt+oRN8ngh1l+++pvkWILPCDxl3BnTQGb/wqIlzU3C7JspLMWMEmuSTeR5aVZqB8fPU2mSebCV6HDFj5qF3AFaBn+yyUVLYdAjO8e/3VN1m9iVNgVd5hA6ZfCNNB4apI2WuYumnRj7HMQZx/FJBrSKMYhf4QRRJ1SidzOXB/g9rC5gSkh5pi1+nhEWOcnFnEMgYCOYvdDhLT3wTut4/AxGMwlK670AY6ngESuCvuhZjZ5eyYoRjlUjqysGvm8ZhjUM36qjhEPNlnIyL/lOYbq5nNHyiRUZV/VqLBC2GMoDEAbEQGLW0H+QBex0x/VFNW17dROoVEK5lBwSgT1wDHKQhSgVh2YbmEPyzXPFHUsg3iBMrACr8YvOmTXHfSZkllvareez00cBSxWc455sZJne+Vbf0N/tCM42MAeBsaf+MRWZIKHjcIRw==",
-    "expiration": "2026-05-21T21:57:40.000Z"
+    "access_key_id": "ASIAZV3A2ECZLQCJ55QD",
+    "secret_access_key": "l8B/IlgBLgGrwSjXQg/lGaJgVF81l6jCnbetsF1C",
+    "session_token": "IQoJb3JpZ2luX2VjEF4aCXVzLWVhc3QtMSJIMEYCIQDAFo59/T0Xdbw9iT5v+BWvq57d9sVx5DD0tLrOHf+exQIhAIZvhUQimq953rgjlmBG01w9n4i0AkjPMH9yoCdlaeEjKvYDCCYQBBoMNjY1Mzg2MDk4ODY2Igwr6ibKeQbz7KDO0HYq0wOxa1ehpcnZDPaqlsHD/jveU8lKLe5selWezZe6y7NlO57xedaHhvGia7RTfaLVtt/d8jhnVUd5Mqr1+L+pt7yz8hAuZIPDls4qWFgCd7eQ4y65cVmXw12KVXKaJlUYKnVSLHyfk/+8RTzxw5Cu5pPjAwLp0tbFI5aerkBOEzJEU5A509Kn/hUoazATEfWqpO0PsUvsPXbonm2FKRWcQ0bWfwmJUhJanZzA39rAVWWSx6Xk1IA860VivCSgR+VBAo9Ftyc3ue90Mqz/YupIsU9veRuO+quLGH91AjVjOhWMeBaDKF5sHZRs85DOTfIy3DWrUPPQinqge/Rz+FlqQDxWAGZwxuXvG/jDp//fDNE/piRp2da+9Kt4RSokf0WNBrsT6zs0du+0V3jBBAxz5NLcwncCWqQ3WtFH4UfzOkOlfZw/HRCsTWjOrU6Cx6FREkcjXsVb6EdCD6dz/i+39ql85TvZzmHgcUKdlU0PgjBrBv4Ha/kEIZlcnVhp702hqJ5JxeP97vQRP9y3CvcGlHwhoeim+PS+8qmcIf9fc21TMkWvc77Rjn9sljwsTGJXCc1p3uvqpfoAjiwQUUXD8PQUHHt+LTlMDBOsnlue+ZQu20lUsDDPiaTSBjqcAfrYZXKyXmVJBQEeyMjjm36Zrm5fU+1mZ8u724gL41k/fRqPO/NmhHvwSIeqDtmPhFn7Oy2n594jIULxtnHIekaULu3W+u5H4mss5nAo3NyZi6A6FfdSTpQcWRLJCJNmkIZBO3JCRX8uYlOp1tpvvER5TevWxAhEfn2NeyX/GLxtmqbn68OZCTDrjNPvPRaoQJyftzPnorgSb1WyLQ==",
+    "expiration": "2026-07-05T01:04:15.000Z",
+    "backend": "GIT_BACKEND_S3"
   },
   "name": "ethical_hacking_course_web",
   "path": "/home/ubuntu/ethical_hacking_course_web",
